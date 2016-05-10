@@ -1,0 +1,1183 @@
+1. The method to embed a portlet in a theme is:
+A. $theme.addPortlet()
+B. $theme.runtime()
+C. $theme.embedPortlet()
+D. $theme.processPortlet()
+Answer: 1.  B
+
+
+2. Color schemes are defined in:
+A. liferay-color-scheme.xml
+B. portal-ext.properties
+C. liferay-look-and-feel.xml
+D. liferay-plugin-package.properties
+Answer: 2.  C
+
+
+3. The <portlet: defineObjects /> tag defines the variables: (Please select all correct answers.)
+A. "portletPreferences"
+B. "renderRequest"
+C. "remoteUser"
+D. "portletSession''
+Answer: 3.  A,B,D
+
+
+4. The recommended way to turn off portlet borders in a custom theme is to:
+A. Modifyportlet.vm to hide theportletborders
+B. Set the theme setting "portlet-setup-show-borders" to "false"
+C. Create a JSP hook that overrides port!et_wrapper.jsp to hide theportletborders
+D. Set the portal property "portlet.setup.show.borders" tofalse"
+Answer: 4.  B
+
+
+5. To ensure that all portlets added to the right-hand column of this layout template have a blue background:
+<div class="my_2_column" id="main-content" role="main">
+<div class= portlet-layout >
+<div class="aui-w50 portlet-column portlet-column-first" id="left-hand">
+$processor.processColumn("column-l\ portlet-column-content portlet-column-content-first")
+</div>
+<div class="aui-w50 portlet-column portlet-column-last" id = "right-hand">
+$processor.processColumn("column-2\ "portlet-column-content portlet-column-content-last") </div>
+</div>
+</div>
+A. #main-content .right-hand .portlet { background:blue; }
+B. #right-hand .portlet { background:blue; }
+C. Provide a custom JSP hook that overwrites the default style for ".column-2"
+D. #right-hand {portlet-background:blue;}
+Answer: 5.  B
+
+
+6. The method to set the value of a custom field for a BlogsEntry object ("blog") is:
+A. PortalUtil.setExpando(blog)
+B. blog.getExpandoBridge().setAttribute()
+C. ExpandoLocalServiceUtil.setAttribute(blog)
+D. blog.setExpandoQ
+Answer: 6.  B
+
+
+7. The default variables in a theme are defined in:
+A. portal_normal.vm
+B. init.vm
+C. main.vm
+D. variables.vm
+Answer: 7.  B
+
+
+8. As a best practice, a portlet plugin imports classes from: (Please select all correct answers.)
+A. portal-impl.jar
+B. portal-service.jar
+C. portlet.jar
+D. ext-impl.jar
+Answer: 8.  B,C
+
+
+9. The recommended way to override the updateLastLogin() method and create a new method called updateLastlmpersonation() for the User service is to:
+A. Create a hook plugin and implement a service wrapper that overrides the updateLastLogin() method and creates the updatel_astImpersonation() method in the User service
+B. Create a portlet plugin and implement a service wrapper hook that overrides the updatel_astLogin() method in the User service and build a new service in the plugin that references the User service and creates the updatel_astImpersonation() method
+C. Create an Ext plugin that modifies portal-spring.xml to replace the User service with a new service that overrides the updatel_astLogin() method and creates the updatel_astImpersonation() method
+D. Create a hook plugin and implement a service wrapper that overrides the updatel_astLogin() method and create an Ext plugin that builds a new service to implement the updateLastImpersonation() method for the User service.
+Answer: 9.  B
+
+
+10. After adding new functionality to an Ext plugin, the recommended way to deploy in a development environment is to:
+A. Stop the server, redeploy the plugin and restart the server
+B. Undeploy the original plugin and deploy the updated plugin
+C. Undeploy the original plugin, clean the server and deploy the updated plugin
+D. Undeploy all plugins and deploy the updated plugin prior to redeploying the other plugins
+Answer: 10. A
+
+
+
+11. When a hook overrides a core JSP named view.jsp:
+A. The new view.jsp overwrites the original file and the original view.jsp is no longer available
+B. The original view.jsp is moved to a temporary folder
+C. The original view.jsp is renamed to view.portal.jsp
+D. The contents of the original view.jsp and the new view.jsp are merged automatically
+Answer: 11. C
+
+
+12. Liferay's core local services: (Please select all correct answers.).
+A. Contain the business logic of the service
+B. Enforce permission checking
+C. Are required if using remote services
+D. Communicate to the database through the persistence layer
+Answer: 12. A,D
+
+
+13. An Ext plugin should be used to:
+A. Create aportlet
+B. Create a theme
+C. Overwrite a portal JSP file
+D. Create a servlet filter
+E. Modify coreportletdeployment descriptors
+F. Create a web service
+Answer: 13. E
+
+
+14. Beta-portlet.war requires services that are in alpha-portlet.war. To guarantee beta-portlet.war deploys after alpha-portlet.war:
+A. </init-param>
+B. Add the following to liferay-plugin-package.properties in beta-portlet.war:required-deploy ment- contexts=alpha-portlet
+C. <required-deployment-contexts>alpha-portlet</required-deployment-contexts>
+D. It is not possible to declare this type of dependency
+Answer: 14. B
+
+
+15. Public render parameters are of the type:
+A. List
+B. RenderParameter
+C. String
+D. Object
+E. RenderRequest
+Answer: 15. C
+
+
+16. Service Builder does not generate:
+A. SQL statements to create tables
+B. Hibernate and Spring configuration files
+C. Axis web services
+D. The view layer
+Answer: 16. D
+
+
+17. The recommended way to modify the Wiki portlet configuration to recognize a new public render parameter defined in a portlet plugin:
+A. Create a hook plugin and add the public render parameter definition to portlet-custom.xml
+B. Create an Ext plugin and add the public render parameter definition to portlet-ext.xml
+C. Create a portlet plugin and re-implement the logic of the Wiki portlet and define the new public render parameter in portlet.xml
+D. Create an Ext plugin and add the public render parameter definition to portlet-custom.xml
+Answer: 17. B
+
+
+18. The element that defines a database table in service.xml is:
+A. <entity>
+B. <table>
+C. <db-table>
+D. <object>
+Answer: 18. A
+
+
+19. If the expiration cache in portlet.xml is set to "-1":
+A. The finder cache does not expire
+B. Ehcache does not expire
+C. The portlet cache does not expire
+D. All of the above
+Answer: 19. C
+
+
+20. To define a primary key named ''bookld" in service.xml:
+A. <primary-column name= bookld" />
+B. <column name = bookld primary = true" />
+C. <primary name= "bookld" />
+D. <column primary="bookId" />
+Answer: 20. B
+ 
+
+
+21. The method to retrieve a list of users that have been added directly to a site is:
+A. SiteLocalServiceUtil.getSiteUsers()
+B. UserLocalServiceUtil.getSiteUsers()
+C. UserLocalServiceUtil.getGroupUsers()
+D. SiteLocalServiceUtil. getGroupUsers ()
+Answer: 21. C
+
+
+22. Portlet application security roles are mapped to Liferay roles in:
+A. portlet.xml
+B. liferay-portlet.xml
+C. liferay-role.xml
+D. liferay-display.xml
+Answer: 22. B
+
+
+23. The service() method in GenericPortlet handles all requests for a particular portlet and dispatches to the appropriate method based on the portlet mode.
+A. True
+B. False
+Answer: 23. B
+
+
+24. The recommended way to create new methods in a core service is to use a service wrapper hook.
+A. True
+B. False
+Answer: 24. B
+
+
+25. The recommended way to escape text is:
+A. StringUtil.escape()
+B. HtmlUtiI.escape()
+C. DisplayUtil.escape()
+D. JSPUtil.escape()
+E. FormUtil.escape()
+F. GetterUtil.escape()
+Answer: 25. B
+
+
+26. The Classic theme is built using:
+A. HTML 4
+B. XHTML
+C. HTML 5
+D. HTML 6
+E. WML
+Answer: 26. C
+
+
+27. The descriptor liferay-portlet.xml defines:
+A. Events
+B. The portlet class
+C. The CSS class wrapper
+D. Resource bundles
+Answer: 27. C
+
+
+28. The recommended way to implement a new SSO solution that captures the SSO header is to:
+A. Create an Ext plugin that adds a sen/let filter to capture the SSO header
+B. Create a hook plugin that implements a servlet filter to capture the SSO header
+C. Modify the portal source code and create an SSO servlet filter in the portal to capture the SSO header
+D. Create a hook plugin to override the Struts action for the Loginportletto capture the SSO header
+Answer: 28. B
+
+
+29. Service Builder is able to: (Please select all correct answers.)
+A. Generate Hibernate configuration files
+B. Generate base implementations of models, services, persistence and basic finders
+C. Generate struts-config.xml and tiles-defs.xml
+D. Generate web services
+Answer: 29. A,B,D
+
+
+30. A hook plugin can extend and override: (Please select all correct answers.)
+A. Core portal Struts actions
+B. CoreportletStruts actions
+C. Portletplugin Struts actions
+D. Layout template Struts actions
+Answer: 30. A,B
+
+
+
+31. A JSR-286 standard portlet extends:
+A. LiferayPortlet
+B. MVCPortlet
+C. GenericPortlet
+D. StrutsPortlet
+E. Any Java class
+Answer: 31. C
+
+
+32. Given the service.xml:
+<entity name="AcmeItem" local-service = "true'' remote-service="false">
+<column name= "acmeltemld" type= "long' primary= "true" />
+<column name= groupld" type="long" />
+</entity>
+The generated classes include: (Please select all correct answers.)
+A. AcmeltemServiceUtil
+B. AcmeltemModel
+C. AcmeltemLocalServiceUtil
+D. AcmeltemJSONSerializer
+E. AcmeltemPersistencelmpI
+Answer: 32. B,C,E
+
+
+33. The method to define a column in a layout template is:
+A. $layout.createColumn()
+B. $layout.defineColumn()
+C. $processor.processColumn()
+D. $layout.addColumn()
+Answer: 33. C
+
+
+34. The hooks that can import classes from the plugin class loader are: (Please select all correct answers.)
+A. Auto login hooks
+B. JSP hooks
+C. Service wrapper hooks
+D. Servlet filter hooks
+E. Struts action hooks
+F. Indexer post processor hooks
+Answer: 34. A,C,D,E,F
+
+
+35. When adding new users to Liferay, the form will display the Details, Organizations and Personal Site sections based on the following property in portal.properties:
+users.form.add.main =detaiIs,organizations,personal-site
+The "users.form.add.main" property is listed in the liferay-hook_6_l_0.dtd as a portal property that can be overridden with a hook.
+Deploying a hook with the following property in the portal.properties file will remove the Personal Site section:
+users.form.add.main =details,organizations
+A. True
+B. False
+Answer: 35. B
+
+
+36. Hook plugins can only override core JSPs, services, language keys and Struts actions.
+A. True
+B. False
+Answer: 36. B
+
+
+37. An Expando is:
+A. A tool for writing newportlets in Liferay
+B. A code generator which generates services based on service.xml
+C. A service in Liferay which allows you to dynamically define a collection of data
+D. A new administrative interface in 6.1
+Answer: 37. C
+
+
+38. The recommended way to implement code that only runs once to modify columns in the database is with a(n):
+A. GlobalStartupAction
+B. ServicePreAction
+C. UpgradeProcess
+D. ServicePostAction
+E. VerifyProcess
+F. GlobalShutdownAction
+Answer: 38. C
+
+
+39. The bundled property file that contains settings for a development environment is:
+A. portal-ext. properties
+B. portal-developer, properties
+C. developer, properties
+D. None of the above
+Answer: 39. B
+
+
+40. Only an Ext plugin can:
+A. Override language keys
+B. Modify the initialization parameters of a coreportlet
+C. Create a model listener
+D. Override a JSP
+E. Override Liferay services
+Answer: 40. B
+
+
+
+41. Thecompanyld" is a(n):
+A. Portal instance
+B. Organization
+C. Site
+D. Team
+Answer: 41. A
+
+
+42. To customize the User service in a hook plugin, create a class that extends:
+A. UserServicelmpI
+B. UserServiceBaseImpI
+C. UserService
+D. UserServiceWrapper
+Answer: 42. D
+
+
+43. The recommended way to override multiple JSPs in the Documents and Media portlet is to:
+A. Create a separate hook plug in for each JSP
+B. Create an Ext plugin
+C. Create a hook plugin that contains all the JSPs
+D. Copy them directly into Liferay
+Answer: 43. C
+
+
+44. Default rankings in the Message Boards portlet are set as portlet preferences. To make all new instances of the portlet display custom rankings, it is recommended to:
+A. Navigate to System Defaults in the Control Panel and update theportletpreferences
+B. Create a hook plugin that modifies the defaultmessage.board.ranks portal property
+C. Create an Ext plugin that contains the desired configuration inportlet-ext.xml
+D. Create a JSP hook that overrides the rankings for all instances of the Message Boardsportlet
+Answer: 44. C
+
+
+45. The method to send a redirect response and prevent resubmitting a form when a user refreshes the page is:
+A. clearRequ estPara mete rs ()
+B. removeDuplicates()
+C. removeParameters()
+D. send Red irect()
+Answer: 45. D
+
+
+46. If multiple Ext plugins modify struts-config-ext.xml:
+A. Liferay merges all of the plugins into one plugin and deploys the combined plugin
+B. Liferay only deploys the first plugin that modifies struts-config-ext.xml and does not deploy subsequent plugins
+C. The last plugin deployed takes precedence
+D. All of the plugins deploy successfully
+Answer: 46. B
+
+
+47. Site administrators would like to search for web content based on the review date. The review date is not currently indexed when web content is published. The recommended way to add the review date to the search index is to:
+A. Create an Ext plugin and overwrite the Journal indexer to index the review date
+B. Create a hook plugin and override the Journal service to index the review date
+C. Create a hook plugin and override the edit article Struts action to index the review date
+D. Create a hook plugin and implement an indexer post processor to index the review date
+Answer: 47. D
+
+
+48. Methods for retrieving the current users ID include: (Please select all correct answers.)
+A. ThemeDisplay.getUserId()
+B. PortaIUtil.getUserld(renderRequest)
+C. request.getRemoteUser()
+D. Liferay.getUserld(renderRequest)
+E. Page.getUserld()
+Answer: 48. A,B,C
+
+
+49. Developing for Liferay requires:
+A. IntelliJ
+B. Eclipse
+C. NetBeans
+D. Liferay Developer Studio
+E. None of the above
+Answer: 49. E
+
+
+50. The <liferay-ui: icon-menu> tag is used to:
+A. Display a list of actions
+B. Display navigation
+C. Display a list of breadcrumbs
+D. Display categories
+Answer: 50. A
+
+
+
+51. Portlets are placed in the Control Panel using:
+A. portlet.xml
+B. liferay-portlet.xml
+C. liferay-plugin-package.properties
+D. liferay-look-and-feel.xml
+Answer: 51. B
+
+
+52. The recommended way to validate a user against an external system when adding a user through the UI or a web service is to:
+A. Create a hook plug in to add a model listener to the User object
+B. Create a service wrapper hook that modifies the User service
+C. Create a Struts action hook to perform validation when the user form is submitted
+D. Create an Ext plugin to modify the core Spring configuration to override the User service
+Answer: 52. B
+
+
+53. All Service Builder entities contain a local reference to: (Please select all correct answers.)
+A. CounterLocaISe rv ice
+B. AssetLocaIService
+C. ResourceLocalService
+D. SocialLocalService
+E. WorkflowLocaISe rvice
+Answer: 53. A,C
+
+
+54. An administrator would like to add a new travel preferences section in the Miscellaneous section of the user form. The travel preferences are stored as custom fields. The recommended way to implement the solution using a hook plugin is to: (Please select all correct answers.)
+A. Modify html/portlet/users_admin/edit_user.jsp to add the travel preferences section to theMiscellaneous section
+B. Set the portal property "users.form. my.account, miscellaneous"to "travel-preferences" and add the corresponding JSP
+C. Create a Struts action hook to persist the Expando value to the database
+D. Add the custom fields to the relevant JSP using <liferay-ui;custom-attribute>
+Answer: 54. B,D
+
+
+55. A class that extends MVCPortlet must implement:
+A. init()
+B. doView()
+C. doEdit()
+D. processAction()
+E. All of the above
+F. None of the above
+Answer: 55. B
+
+
+56. The JavaScript method that executes after each portlet on the page loads is:
+A. AUI().ready(fn)
+B. Liferay.Portlet.ready(fn)
+C. Liferay.on(allPortletsReady', fn)
+D. None of the above
+Answer: 56. B
+
+
+57. When a hook plugin overrides the language keys for the locale "en_USthe text presented for the locale comes from:
+A. The core Language.properties
+B. The plugin Language.properties
+C. The plugin Language_en.properties, then the core Language.properties
+D. The plugin Language_en.properties, then the core Language_en.properties
+Answer: 57. D
+
+
+58. The method to retrieve an integer submitted as a form field named "widgetCount"' is:
+A. GetterUtil.getInteger(actionRequest, "widgetCount")
+B. RequestUtiI.getInteger(actionRequest,"widgetCount )
+C. HTMLUtil.getInteger(actionRequest, "widgetCount")
+D. ParamUtil.getInteger(actionRequest, "widgetCount")
+E. FormUtil.getInteger(actionRequest, "widgetCount")
+F. AlloyUtil.getInteger(actionRequest, "widgetCount")
+Answer: 58. D
+
+
+59. The Ant target that removes compiled class files from the plugin is:
+A. obliterate
+B. destroy
+C. remove
+D. clean
+E. reset
+F. terminate
+Answer: 59. D
+
+
+60. Customizations to a theme are made in the folder:
+A. _unstyled
+B. .styled
+C. themes
+D. _diffs
+E. custom
+Answer: 60. D
+ 
+
+
+61. The method to retrieve a list of users added directly to an organization is:
+A. OrganizationLocalServiceUtil.getOrganizationUsers()
+B. UserLocalServiceUtil.getOrganizationUsers()
+C. GroupLocalServiceUtil.getOrganizationUsers()
+D. All of the above
+Answer: 61. B
+
+
+62. To remove some of the core portlets from the Add Application menu and add them in the Control Panel:
+A. Create a hook plugin that modifies the portal properties default.control.panel.portlets and default.add .application.portlets
+B. Create an Ext plugin that modifies liferay-plugin-package.xml and liferay-display.xml
+C. Create an Ext plugin that modifies liferay-portlet-ext.xml and liferay-display.xml
+D. Create an Ext plugin that modifies liferay-look-and-feel.xml
+Answer: 62. C
+
+
+63. All render logic must be implemented in the JSP when using MVCPortlet:
+A. True
+B. False
+Answer: 63. B
+
+
+64. The descriptor liferay-display.xml:
+A. Defines the initial views for the portlet
+B. Defines the categories in the Add Application menu
+C. Provides the ability to use Liferay's permission system
+D. All of the above
+Answer: 64. B
+
+
+65. The recommended way to add new functionality in Liferay is to:
+A. Create Ext plugins
+B. Createportlet, theme, layout template or hook plugins
+C. Modify Liferay's source code directly
+D. All of the above
+Answer: 65. B
+
+
+66. To display the language key "add-part'' use:
+A. <liferay-ui:locale key= "add-part" />
+B. <liferay-ui:language key= "add-part" />
+C. <liferay-ui;message key = "add-part" />
+D. <aui-ui:message key ="add-part" />
+Answer: 66. C
+
+
+67. Default RSS feeds are set as portlet preferences. To make all new instances of the RSS poitlet display a single custom RSS feed, it is recommended to:
+A. Create a hook plugin to add a model listener to the layout to update the portlet preferences of any RSS portlet added to the page
+B. Create an Ext plugin that contains the desired configuration in portlet-ext.xml
+C. Create a JSP hook that overrides the RSS portlet's default configuration settings
+D. Navigate to System Defaults in the Control Panel and update the portlet preferences
+Answer: 67. B
+
+
+68. ThemeDisplay.getUserId() returns a value of -1 for the Guest user.
+A. True
+B. False
+Answer: 68. B
+
+
+69. To allow more than one instance of a portlet on the same page setinstanceabletotrue" in:
+A. liferay-portlet.xml
+B. liferay-display.xml
+C. liferay-plugin-package.xml
+D. liferay-layout-template.xml
+E. portlet.xml
+F. web.xml
+Answer: 69. A
+
+
+70. The business logic for UserLocalServiceUtil is found in:
+A. Use rLocaIServiceUtil
+B. UserLocalServicelmpI
+C. Use rLocalService
+D. UserServicelmpI
+E. UserServiceUtil
+Answer: 70. B
+
+
+
+71. Portlets that extend MVCPortlet require annotations on action methods.
+A. True
+B. False
+Answer: 71. B
+
+
+72. A hook plugin can be used to: (Please select all correct answers.)
+A. Modify a portal language key
+B. Modify a theme plugin
+C. Override a portal JSP
+D. Override the User service
+E. Override PortalLDAPUtil
+Answer: 72. A,C,D
+
+
+73. The recommended way to strip content from the outgoing response is to:
+A. Create a hook plugin that implements a service post action to strip content from the response
+B. Create an Ext plugin that implements a servlet filter to strip content from the response
+C. Create a hook plugin that implements a servlet filter to strip content from the response
+D. Create a hook that implements a request post processor to strip content from the response
+Answer: 73. C
+
+
+74. To customize the default success message displayed by MVCPortlet:
+A. Add a custom key to the SessionMessages object
+B. Override the language key default-success-message in Language.properties
+C. Provide a <default-message-mapping> entry in liferay-portlet.xml
+D. Pass a parameter called 'success'' in the ActionURL and map it to a custom language key
+Answer: 74. A
+
+
+75. Instanceable portlets: (Please select all correct answers.)
+A. Have unique preferences perportlet
+B. Can be added to a page multiple times
+C. Share the same data within the same site
+D. Can be displayed in the Control Panel
+E. Share the same data on the same page
+Answer: 75. A,B
+
+
+76. The recommended way to cleanly redeploy an Ext plugin is to:
+A. Remove the plugin WAR file from the server and redeploy
+B. Set ext.redeploy .enabled to''true''
+C. Remove the ext-plugin-[nameof plugin],xml file in the deployed Liferay application and redeploy
+D. Start from a clean instance of the server and redeploy
+Answer: 76. D
+
+
+77. Supported plugin types in the Plugins SDK include: (Please select all correct answers.)
+A. AlloyUI plugins
+B. Ext plugins
+C. Hook plugins
+D. Web plugins
+E. Layout template plugins
+F. Portlet plugins
+Answer: 77. B,C,D,E,F
+
+
+78. Objects stored in the portlet application scope session are available to:
+A. Any portlet on the same page
+B. Any portlet in the same portlet application
+C. Any portlet within the portal application
+D. Only the portlet that stored the object in the session
+Answer: 78. B
+
+
+79. To start Liferay with developer properties:
+A. Set the porta I.developer, mode property in portal-ext.properties to ''true"
+B. Include portal-developer.properties during Java startup, or in portal-ext.properties
+C. Navigate to Server Administration in the Control Panel and set the portal.developer.mode property to "true"
+D. Copy portal-developer.properties from the portal's classes directory to the Liferay home directory and restart the server
+Answer: 79. B
+
+
+80. The method to get the value of a custom field for a User object named "user" is:
+A. ExpandoLocalServiceUtil.getAttribute(user)
+B. user.getExpandoBridge().getAttribute()
+C. user.getExpando()
+D. PortalUtil.getExpando(user)
+Answer: 80. B
+
+
+
+81. In portal.properties:
+login,events.post=\
+com.liferay.portal.events.ChannelLoginPostActionA,\
+com.liferay.portal.events.Defaultl_andingPageAction,\
+com.liferay.portal.events.LoginPostAction
+A hook plugin can insert a new class between DefaultLandingPageAction and LoginPostAction.
+A. True
+B. False
+Answer: 81. B
+
+
+82. The descriptor liferay-portlet.xml:
+A. Defines Liferay-specific portlet features
+B. Defines the categories of the Add Application menu
+C. Identifies portlets that only run onLiferay
+D. All of the above
+Answer: 82. A
+
+
+83. Not all of the fields in the User object are searchable out of the box. The recommended way to make these fields searchable is to:
+A. Create a hook plugin that overrides the User service to index the required fields
+B. Create a hook plugin that overrides the edit user Struts action to index the required fields
+C. Create an Ext plugin that extends the User indexer to index the required fields
+D. Create a hook plugin that implements an indexer post processor to index the required fields
+Answer: 83. D
+
+
+84. Events supported by JSR-286 portlets for interportlet communication are: (Please select all correct answers.)
+A. Publishing events
+B. Processing events
+C. Global events
+D. Lifecycle events
+Answer: 84. A,B
+
+
+85. The recommended way to display a web content article in a theme:
+A. Use the AssetEntry service in portal_normal.vm to get the desired article
+B. Embed the Web Content Display portlet, passing in the desired article ID to the portlet URL
+C. Embed the Web Content Display portlet, passing in portlet preferences set to the desired article
+D. Create a JSP hook that gets the desired article from the JournalArticle service
+Answer: 85. C
+
+
+86. To generate remote services with Service Builder:
+A. Pass the switch "-Dremote-service=true" to the Ant "build-service" target
+B. Set the attribute "remote-service'' to "true" on the "entity" element in service,xml
+C. Set the attribute "remote-service" to "true" on the "service-builder" element in service.xml
+D. All of the above
+Answer: 86. B
+
+
+87. After removing a customization from an Ext plugin, the recommended way to redeploy in a development environment is to:
+A. Redeploy the plugin and restart the server
+B. Undeploy the original plugin and deploy the updated plugin
+C. Start with a clean instance of the server and deploy all plugins
+D. Redeploy all plugins and restart the server
+Answer: 87. C
+
+
+88. The following statements about plugins are true: (Please select all correct answers.)
+A. All plugins are hot-deployable
+B. Plugins can be used to modify core portal behavior
+C. Plugins can be used to modify the layout of a page
+D. Liferay supports six different types of plugins
+E. Plugins are the preferred development approach
+Answer: 88. B,C,D,E
+
+
+89. The "companyId" is a(n):
+A. Portal instance
+B. Organization
+C. Site
+D. Team
+Answer: 89. A
+
+
+90. Creating a Struts action hook requires the following elements in liferay-hook.xml: (Please select all correct answers.)
+A. <struts-hook>
+B. <struts-action-path >
+C. <struts-action-impl>
+D. <override-struts-path>
+E. <struts-action >
+Answer: 90. B,C,E
+ 
+
+
+91. The Plugins SDK uses:
+A. portal-service.jar
+B. JAR files from the user's home directory
+C. portal-impl.jar
+D. portal-plugin.jar
+Answer: 91. A
+
+
+92. The descriptor liferay-hook.xml defines the location to override a core JSP using:
+A. <url-pattern>
+B. <custom-jsp-global>
+C. <custom-jsp-dir>
+D. <jsp-override>
+E. <include-and-override>
+Answer: 92. C
+
+
+93. To map a Service Builder entity to an existing database table in service.xml the entity name must match the database table name.
+A. True
+B. False
+Answer: 93. B
+
+
+94. In portal.properties, the following property lists portlets that can be embedded on any page:
+portlet.add(default.resource.check.whitelist=3,56_INSTANCE_0000,5S,S2,S6,87,88/103,113,145, 164,
+The property is listed in liferay-hook_6_l_0.dtd as a property that can can be overridden with a hook.
+The recommended way to prevent embedding the Search portlet ("3") is to create a hook plugin.
+A. True
+B. False
+Answer: 94. B
+
+
+95. The location of the XML file that determines permissions for a portlet plugin is configured by:
+A. The VM argument "resource-actions-configs"
+B. The portlet property "resource.actions.configs"
+C. The init parameter "resource-actions-configs"
+D. A portal property "plugin.resource.actions.configs"
+Answer: 95. B
+
+
+96. AlloyUI is:
+A. A JavaScript library
+B. A CSS framework
+C. A tag library
+D. All of the above
+Answer: 96. D
+
+
+97. The JavaScript method that executes as soon as the HTML document has finished loading is:
+A. AUI().ready(fn)
+B. Liferay.Portlet.ready(fn)
+C. Liferay.on(fn)
+D. None of the above
+Answer: 97. A
+
+
+98. Advantages of hook plugins over Ext plugins include: (Please select all correct answers.)
+A. A hook plugin is hot deployable, while an Ext plugin is not
+B. A hook plugin has direct access to the portal class loader, while an Ext plugin does not
+C. A hook plugin provides an easier upgrade path for overriding core services and JSPs
+D. A hook plugin can modify service layer classes, while an Ext plugin cannot
+Answer: 98. A,C
+
+
+99. The method to embed the non-instanceable Language portlet with the name "82" in a theme is:
+A. $theme.include("82")
+B. $theme.runtime("82")
+C. $theme.runtime("82_INSTANCE_abcl23")
+D. $theme.include("82_INSTANCE_abcl23")
+Answer: 99. B
+
+
+100. The recommended way to add a custom class to Liferay's startup process is to:
+A. Create a portal-ext.properties file in the Liferay Home directory that adds the custom class to global.startup.events, and add the custom class to the deployed Liferay application
+B. Create an Ext plugin that replaces the value of global.startup.events with the custom class, and add the custom class to the plugin
+C. Create a portal-ext.properties file in the Liferay Home directory that replaces the value of global.startup.events with the custom class, and add the custom class to portal-impl.jar
+D. Create an Ext plugin that adds the custom class to global.startup.events, and add the custom class to the plugin
+Answer: 100. D
+
+
+
+101. Tables are created in the database for a Service Builder entity after:
+A. The Ant "build-service" target has run
+B. The portlet is deployed for the first time
+C. The portlet is added to a page for the first time
+D. Tables must be created manually
+Answer: 101. B
+
+
+102. After a portlet completes the action phase:
+A. Only that portlet enters the render phase
+B. All portlets on the page enter the render phase
+C. Any portlet whose data has changed enters the render phase
+D. Nothing happens since the render phase occurs before the action phase
+Answer: 102. B
+
+
+103. When embeddding a plugin portlet in a layout template with $processor.processPortlet() use the:
+A. Portlet name
+B. Fully qualified portlet ID
+C. Portlet URL
+D. Fully qualified display name
+Answer: 103. B
+
+
+104. The following code:
+GetterUtil.getlnteger("one")
+returns:
+A. 0
+B. 1
+C. The code throws a java.lang.ArithmeticException
+D. The code throws a com.liferay.portal.kernel.exception.SystemException
+Answer: 104. A
+
+
+105. The method to get theme settings in a theme is:
+A. $portalUtil.getSetting()
+B. $theme.getSetting()
+C. $layout.getSetting()
+D. $themeDisplay.getSetting()
+Answer: 105. B
+
+
+106. The recommended way to customize how the User object indexes information is through a(n):
+A. Hook plugin
+B. Direct modification of the portal source
+C. Ext plugin
+D. Ext environment
+Answer: 106. A
+
+
+107. The recommended way to implement a service wrapper hook that customizes the authenticateByScreenName() method of the User service using a class called com.sample.MyUserLocalServicelmpI is to: (Please select all correct answers.)
+A. </service>
+B. Copy all of the methods from UserLocalServicelmpI to MyUserLocalServicelmpI
+C. Override the authenticateByScreenName() method in MyUserLocalServicelmpI
+D. Add the following to liferay-plugin-package.properties:required -deployment- contexts=UserLocalServ ice
+E. Implement custom logic and call super.authenticateByScreenNameQ if applicable
+Answer: 107. A,C,E
+
+
+108. The method to embed a portlet in a layout template is:
+A. $layout.addPortlet()
+B. $processor.processPortlet()
+C. $layoutembedPortlet()
+D. $layout. process PortIet()
+Answer: 108. B
+
+
+109. Service Builder entities are defined in:
+A. portlet.xml
+B. liferay-portlet.xml
+C. service, xml
+D. web.xml
+Answer: 109 C
+
+
+110. MVCPortlet directs page flow using:
+A. The controller() method
+B. A render parameter called "mvcPath"
+C. A direct link to the JSP with a relative URL
+D. A public render parameter called "path"
+Answer: 110. B
+
+
+
+
+111. The following classes can be imported when overriding a core JSP using a hook plugin: (Please select all correct answers.)
+A. Classes residing in the global class loader
+B. Classes residing in the portal class loader
+C. Classes residing in the portlet plugin class loader
+D. Classes residing in the hook plugin class loader
+Answer: 111. A,B
+
+
+112. User-specific properties in the Plugins SDK for the user "jsmith'' are configured in:
+A. build.jsmith.properties
+B. pom.xml
+C. pom.jsmith.properties
+D. portal.settings
+E. portal.properties
+F. portal-ext.properties
+Answer: 112. A
+
+
+113. The permissionChecker.hasPermission() method requires the following parameters to determine if a user has the permissions to update a resource: (Please select all correct answers.)
+A. Group ID
+B. User ID
+C. Action ID
+D. Company ID
+E. Resource primary key
+F. Resource name
+Answer: 113. A,C,E,F
+
+
+114. Liferay's core remote services: (Please select all correct answers.)
+A. Can only return primitive types
+B. Perform permission checking
+C. Must be invoked through web services
+D. Are accessed through Java or web services
+Answer: 114. B,D
+
+
+115. Language hooks cannot be used to add new language keys.
+A. True
+B. False
+Answer: 115. B
+
+
+116. Liferay's persistence layer: (Please select all correct answers.)
+A. Relies on Enterprise JavaBeans to ensure compatibility with all major application servers
+B. Uses Hibernate by default to ensure compatibility with all major database servers
+C. Can be invoked directly from the UI layer
+D. Can be configured to use JPA
+Answer: 116. B,D
+
+
+117. The JavaScript method that executes after all the portlets on the page have finished loading is:
+A. Liferay.Portlet.ready(fn)
+B. AUI().ready(fn)
+C. Liferay.on('allPortletsReady',fn)
+D. None of the above
+Answer: 117. C
+
+
+118. Portlet events are distributed to portlets on different pages by setting the property:
+A. portlet.event.distribution=all-pages
+B. event.distribution =all-pages
+C. portlet.event.distribution=layout-set
+D. No specific property setting is required
+Answer: 118. C
+
+
+119. To define portlet actions in separate classes using MVCPortlet: (Please select all correct answers.)
+A. Each class must implement the MVCAction interface
+B. Each class must implement the ActionCommand interface
+C. Each class must implement a processCommand() method that returns a boolean to indicate if the action completed
+D. Each class must implement a renderCommand() method
+Answer: 119. B,C
+
+
+120. A Liferay utility to verify the format of an email address is:
+A. Validator.isEmailAddress()
+B. HTMLUtil.isEmailAddress()
+C. StringUtil.isEmailAddress()
+D. Corrector.isEmailAddress()
+E. GetterUtil.isEmailAddress()
+F. ParamUtil.isEmailAddress()
+Answer: 120. A
+
+
+
+
+121. The portal properties that a hook plugin can override are defined in:
+A. portal.properties
+B. portal-ext.properties
+C. Iiferay-hook_6_l_0.dtd
+D. liferay-hook.xml
+E. portal-hook.properties
+F. portal-hook_6_l_0.dtd
+Answer: 121. C
+
+
+122. The file containing the HTML document for a typical page is:
+A. portal.vm
+B. portal_normal.vm
+C. liferay-portal.vm
+D. init.vm
+Answer: 122. B
+
+
+123. The standard JSR-286 portlet modes are: (Please select all correct answers.)
+A. Help
+B. Configuration
+C. Print
+D. Edit
+E. View
+F. About
+Answer: 123. A,D,E
+
+
+124. The recommended way to automatically add tags when creating web content is to:
+A. Create a model listener in a hook plugin and implement the onAfterCreate() method
+B. Create a model listener in a hook plugin and implement the onBeforeCreate() method
+C. Create an Ext plugin to extend and override JournalArticleLocalServicelmpI
+D. Create a hook plugin and use a service wrapper to extend JournalArticleLocalService
+Answer: 124. D
+
+
+125. To display a success message in a JSP use:
+A. <liferay-ui:success message="part-deleted-successfully" />
+B. <liferay-ui:success key= "part-deleted-successfully" />
+C. <alloy-ui:success key="part-deleted'' message="part-deleted-successfully" />
+D. <liferay-ui:success key= "part-deleted" message="part-deleted-successfully" />
+Answer: 125. D
+
+
+126. A portlet application only needs the standard web.xml deployment descriptor to be considered valid.
+A. True
+B. False
+Answer: 126. B
+
+
+127. The method to retrieve a list of organizations where a user has direct membership is:
+A. OrganizationLocalServiceUtil.getUserOrganizations()
+B. UserLocaIServiceUtil.getUserOrganizations()
+C. GroupLocalServiceUtil.getUserOrganizations()
+D. All of the above
+Answer: 127. A
+
+
+128. The recommended way to share language keys across portlet applications is:
+A. Create a resource bundle in one portlet and declare a dependency in the other portlets
+B. Create an Ext plugin with the language keys from all of the portlets
+C. Create a symbolic link in the portlets pointing to an external resource bundle
+D. Create a hook plugin containing language keys from all of the portlets
+Answer: 128. D
+
+
+129. In a JSP that includes the <liferay-theme: defineObjects /> tag, the method to check permissions is:
+A. permissionChecker.hasPermissionO
+B. portalUtil.getPermissionChecker().hasPermission()
+C. permissionUtil.hasPermission()
+D. renderRequest.getPermissionChecker().hasPermission()
+Answer: 129. A
+
+
+130. The best way to add a new language key to the portal is through:
+A. The Control Panel
+B. A hook plugin
+C. An Ext plugin
+D. Modifying Liferay's source
+Answer: 130. B
+
+
+
+
+131. The recommended way to add support for a new locale is to:
+A. Create an Ext plugin that adds a language properties file for the desired locale
+B. Create an Ext plugin that adds a language properties file for the desired locale and implements a servlet filter mapping using IlSnFilter
+C. Create a hook plugin that adds a language properties file for the desired locale and implements a servlet filter hook to invoke IlSnFilter through PortalClassLoaderFilter
+D. Create a portlet plugin that overrides the core language filter to recognize the desired locale
+Answer: 131. C
+
+
+132. The settings in portal-developer.properties:
+A. Enable faster deployment of plugins
+B. Disable minification of CSS and JavaScript
+C. Assist deployment from a development to a production environment
+D. Precompile Velocity and FreeMarker templates
+Answer: 132. B
+
+
+133. Portlets can use interportletcommunication to: (Please select all correct answers.)
+A. Pass any serializable object as an event payload
+B. Trigger multiple events
+C. Invoke events directly from the render phase
+D. Enforce the processing order of events
+Answer: 133. A,B
+
+
+134. The recommended way to make an isolated change to a core JSP is to:
+A. Create an Ext plugin to create a backup of the original JSP and extend the backup JSP
+B. Create a hook plugin to override the original JSP using the <liferay-util:buffer> tag to copy the contents of the JSP
+C. Create a hook plugin to override the original JSP using the <file-name>-override.jsp pattern
+D. Create an Ext plugin to override the original JSP using the <liferay-util:include> tag to copy the contents of the JSP
+Answer: 134. B
+
+
+135. Liferay's core JavaScript framework is:
+A. jQuery
+B. Dojo
+C. MooTools
+D. AlloyUI
+E. YUI
+Answer: 135. D
+
+
+136. A Struts action hook cannot define new Struts actions.
+A. True
+B. False
+Answer: 136. B
+
+
+137. AlloyUI is a framework built on:
+A. YUI2
+B. jQuery
+C. YUI3
+D. None of the above
+Answer: 137. C
+
+
+138. A portlet can be assigned to a category in the Add Application menu using:
+A. liferay-display.xml
+B. liferay-portlet.xml
+C. liferay-category.xml
+D. liferay-menu.xml
+Answer: 138. A
+
+
+139. A solution that requires modifying the Blogs portlet by overriding several core JSPs and a Struts action is best developed as:
+A. A single hook plugin
+B. A Struts hook plugin and a JSP hook plugin
+C. A single Ext plugin
+D. A Struts hook plugin and several JSP hook plugins
+Answer: 139. A
+
+
+140. The portlet lifecycle includes the methods: (Please select all correct answers.)
+A. destroy ()
+B. processEvent()
+C. service()
+D. render()
+E. serveResource()
+F. processAction()
+Answer: 140. A,B,D,E,F

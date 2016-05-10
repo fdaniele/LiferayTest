@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liferay Test Certificazione</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> </meta>
+    <!-- Bootstrap -->
+    <link href="webjars/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="webjars/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="resources/js/script.js"></script>
+    <script th:src="@{css/main.css}"></script>
+
+	<div class="thisone center">
+	    <span class="btn btn-success">Domande Corrette: #numCorr#</span><span class="btn btn-danger">Domande Errate: #numErr#</span>
+	</div>
+    <span class="alert alert-warning">La seguente string "[[" e "]]" sosituisce l'apertura e chiusura del TAG maggiore e minore</span>
+
+	<div class="panel panel-default" th:each="instance : ${qa}">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+			
+				<a class="accordion-toggle collapsed" data-toggle="collapse"
+					data-parent="#accordion" href="" th:href="@{#} + ${instance.value.id}"  th:utext="${#strings.replace(instance.value.question,T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}">Domandaaa</a>
+			</h4>
+		</div>
+		
+		<div th:id="${instance.value.id}" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span th:text="${instance.value.answer}"></span>
+				<div class="center">
+					<button class="btn btn-success">Corretta</button>
+					<button class="btn btn-error">Errata</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
