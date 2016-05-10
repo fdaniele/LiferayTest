@@ -2,12 +2,15 @@ package it.sixmemos.model;
 
 import java.io.Serializable;
 import java.util.List;
-
+/**
+* Simple application generate test for liferay developer certification
+*
+* @author  Daniele Fiorio
+* @version 1.0
+* @since   2016-05-09
+*/
 public class Question implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 783167977971259649L;
 	
 	private Integer id;

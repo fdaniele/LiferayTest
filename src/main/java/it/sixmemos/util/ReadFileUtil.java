@@ -12,7 +12,13 @@ import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
-
+/**
+* Simple application generate test for liferay developer certification
+*
+* @author  Daniele Fiorio
+* @version 1.0
+* @since   2016-05-09
+*/
 public class ReadFileUtil {
 	
 	private ApplicationContext context;
@@ -40,7 +46,7 @@ public class ReadFileUtil {
 					List<String> answers = Arrays.asList(answer.split("\\,"));
 					Question q = new Question();
 					q.setId(id);
-					String questRep = temp.get(id).replaceAll("\\<", "[[").replaceAll("\\>", "]]");
+					String questRep = temp.get(id).replaceAll("\\<", "[[").replaceAll("\\>", "]]").replaceAll("\n", "<br/>");
 					q.setQuestion(questRep);
 					q.setAnswer(answers);
 

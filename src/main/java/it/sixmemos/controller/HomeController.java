@@ -4,26 +4,24 @@ import it.sixmemos.model.Question;
 import it.sixmemos.util.ReadFileUtil;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * User: JoaoDuraes
- */
-
+* Simple application generate test for liferay developer certification
+*
+* @author  Daniele Fiorio
+* @version 1.0
+* @since   2016-05-09
+*/
 @Controller
+@EnableAutoConfiguration
 public class HomeController {
 	
 	@Autowired
@@ -37,7 +35,7 @@ public class HomeController {
 	}
 	
     @RequestMapping("/")
-    public String helloWorld(Model model) throws IOException {
+    public String homepage(Model model) throws IOException {
     	if(map.isEmpty()){
 	    	ReadFileUtil readFileUtil = new ReadFileUtil(context); 
 	    	map = readFileUtil.getMapQuestions();
