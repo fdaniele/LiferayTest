@@ -14,7 +14,9 @@
 
 
 	<div class="thisone center">
-	    <span class="btn btn-success">Domande Corrette: <b id="infoAnsGiusta">0</b></span><span class="btn btn-danger">Domande Errate: <b id="infoAnsSbagliata">0</b></span>
+	    <span class="btn btn-success">Domande Corrette: <b id="infoAnsGiusta">0</b></span>
+	    <span class="btn btn-danger">Domande Errate: <b id="infoAnsSbagliata">0</b></span>
+	    <span id="btnShuffle"><button class="btn btn-default">Shuffle</button></span>
 	</div>
     <div class="alert alert-warning">La seguente string "[[" e "]]" sosituisce l'apertura e chiusura del TAG maggiore e minore</div>
 
@@ -22,13 +24,13 @@
 		<div class="panel-heading">
 			<h4 class="panel-title">
 				<a class="accordion-toggle collapsed" data-toggle="collapse"
-					data-parent="#accordion" href="" th:href="@{#} + ${instance.value.id}"  th:utext="${#strings.replace(instance.value.question,'\\n','&lt;br /&gt;')}">Domandaaa</a>
+					data-parent="#accordion" href="" th:href="@{#} + ${instance.id}"  th:utext="${#strings.replace(instance.question,'\\n','&lt;br /&gt;')}">Domandaaa</a>
 			</h4>
 		</div>
 		
-		<div th:id="${instance.value.id}" class="panel-collapse collapse">
+		<div th:id="${instance.id}" class="panel-collapse collapse">
 			<div class="panel-body">
-				<span th:text="${instance.value.answer}"></span>
+				<span th:text="${instance.answer}"></span>
 				<div id="btnAnswer" class="center">
 					<button class="btn btn-success">Corretta</button>
 					<button class="btn btn-danger">Errata</button>

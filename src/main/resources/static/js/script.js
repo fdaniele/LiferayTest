@@ -26,6 +26,10 @@ $(document).ready(function() {
 		colorCssAnswer(false,$(this));
 		addRisposta(false);
 	});
+	
+	$('#btnShuffle .btn-default').click(function(){
+		window.location.href = "/?shuffle=true";
+	});
 });
 
 function colorCssAnswer(giusta,clickId){

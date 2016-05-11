@@ -4,7 +4,10 @@ import it.sixmemos.model.Question;
 import it.sixmemos.util.ReadFileUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -12,6 +15,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
 * Simple application generate test for liferay developer certification
@@ -26,8 +30,6 @@ public class HomeController {
 	
 	@Autowired
 	private ApplicationContext context;
-
-	private HashMap<Integer, Question> map = new HashMap<Integer, Question>();
 	
 	@Autowired
 	public void context(ApplicationContext ctx) { 
@@ -35,12 +37,18 @@ public class HomeController {
 	}
 	
     @RequestMapping("/")
-    public String homepage(Model model) throws IOException {
-    	if(map.isEmpty()){
-	    	ReadFileUtil readFileUtil = new ReadFileUtil(context); 
-	    	map = readFileUtil.getMapQuestions();
+    public String homepage(Model model,@RequestParam(value="shuffle", required=false, defaultValue="false") Boolean shuffle) throws IOException {
+    	HashMap<Integer, Question> map = populateHashQuestions();
+    	List<Question> listQuestion = new ArrayList<Question>(map.values());
+    	if(shuffle){
+    		Collections.shuffle(listQuestion);
 	    }
-	    model.addAttribute("qa",map);
+	    model.addAttribute("qa",listQuestion);
     	return "index";
+    }
+    
+    private HashMap<Integer, Question> populateHashQuestions() throws IOException{
+    	ReadFileUtil readFileUtil = new ReadFileUtil(context); 
+    	return readFileUtil.getMapQuestions();
     }
 }
