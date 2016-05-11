@@ -919,7 +919,7 @@ A. portlet.xml
 B. liferay-portlet.xml
 C. service, xml
 D. web.xml
-Answer: 109 C
+Answer: 109. C
 
 
 110. MVCPortlet directs page flow using:
