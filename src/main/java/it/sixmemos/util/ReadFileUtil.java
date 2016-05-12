@@ -46,7 +46,7 @@ public class ReadFileUtil {
 					List<String> answers = Arrays.asList(answer.split("\\,"));
 					Question q = new Question();
 					q.setId(id);
-					String questRep = temp.get(id).replaceAll("\\<", "[[").replaceAll("\\>", "]]").replaceAll("\n", "<br/>");
+					String questRep = temp.get(id).replaceAll("\\<", "&lt;").replaceAll("\\>", "&gt;").replaceAll("\n", "<br/>");
 					q.setQuestion(questRep);
 					q.setAnswer(answers);
 

@@ -23,10 +23,10 @@ Answer: 3.  A,B,D
 
 
 4. The recommended way to turn off portlet borders in a custom theme is to:
-A. Modifyportlet.vm to hide theportletborders
+A. Modifyportlet.vm to hide the portlet borders
 B. Set the theme setting "portlet-setup-show-borders" to "false"
-C. Create a JSP hook that overrides port!et_wrapper.jsp to hide theportletborders
-D. Set the portal property "portlet.setup.show.borders" tofalse"
+C. Create a JSP hook that overrides portlet_wrapper.jsp to hide theportletborders
+D. Set the portal property "portlet.setup.show.borders" to "false"
 Answer: 4.  B
 
 
@@ -71,11 +71,11 @@ D. ext-impl.jar
 Answer: 8.  B,C
 
 
-9. The recommended way to override the updateLastLogin() method and create a new method called updateLastlmpersonation() for the User service is to:
+9. The recommended way to override the updateLastLogin() method and create a new method called updateLastImpersonation() for the User service is to:
 A. Create a hook plugin and implement a service wrapper that overrides the updateLastLogin() method and creates the updatel_astImpersonation() method in the User service
-B. Create a portlet plugin and implement a service wrapper hook that overrides the updatel_astLogin() method in the User service and build a new service in the plugin that references the User service and creates the updatel_astImpersonation() method
-C. Create an Ext plugin that modifies portal-spring.xml to replace the User service with a new service that overrides the updatel_astLogin() method and creates the updatel_astImpersonation() method
-D. Create a hook plugin and implement a service wrapper that overrides the updatel_astLogin() method and create an Ext plugin that builds a new service to implement the updateLastImpersonation() method for the User service.
+B. Create a portlet plugin and implement a service wrapper hook that overrides the updateLastLogin() method in the User service and build a new service in the plugin that references the User service and creates the updateLastImpersonation() method
+C. Create an Ext plugin that modifies portal-spring.xml to replace the User service with a new service that overrides the updateLastLogin() method and creates the updateLastImpersonation() method
+D. Create a hook plugin and implement a service wrapper that overrides the updateLastLogin() method and create an Ext plugin that builds a new service to implement the updateLastImpersonation() method for the User service.
 Answer: 9.  B
 
 
@@ -116,7 +116,7 @@ Answer: 13. E
 
 14. Beta-portlet.war requires services that are in alpha-portlet.war. To guarantee beta-portlet.war deploys after alpha-portlet.war:
 A. </init-param>
-B. Add the following to liferay-plugin-package.properties in beta-portlet.war:required-deploy ment- contexts=alpha-portlet
+B. Add the following to liferay-plugin-package.properties in beta-portlet.war:required-deployment-contexts=alpha-portlet
 C. <required-deployment-contexts>alpha-portlet</required-deployment-contexts>
 D. It is not possible to declare this type of dependency
 Answer: 14. B
@@ -163,10 +163,10 @@ D. All of the above
 Answer: 19. C
 
 
-20. To define a primary key named ''bookld" in service.xml:
-A. <primary-column name= bookld" />
-B. <column name = bookld primary = true" />
-C. <primary name= "bookld" />
+20. To define a primary key named "bookld" in service.xml:
+A. <primary-column name="bookld" />
+B. <column name="bookld" primary="true" />
+C. <primary name="bookld" />
 D. <column primary="bookId" />
 Answer: 20. B
  
@@ -381,7 +381,7 @@ Answer: 44. C
 A. clearRequ estPara mete rs ()
 B. removeDuplicates()
 C. removeParameters()
-D. send Red irect()
+D. sendRedirect()
 Answer: 45. D
 
 
@@ -455,7 +455,7 @@ Answer: 53. A,C
 
 54. An administrator would like to add a new travel preferences section in the Miscellaneous section of the user form. The travel preferences are stored as custom fields. The recommended way to implement the solution using a hook plugin is to: (Please select all correct answers.)
 A. Modify html/portlet/users_admin/edit_user.jsp to add the travel preferences section to theMiscellaneous section
-B. Set the portal property "users.form. my.account, miscellaneous"to "travel-preferences" and add the corresponding JSP
+B. Set the portal property "users.form. my.account, miscellaneous" to "travel-preferences" and add the corresponding JSP
 C. Create a Struts action hook to persist the Expando value to the database
 D. Add the custom fields to the relevant JSP using <liferay-ui;custom-attribute>
 Answer: 54. B,D
@@ -479,7 +479,7 @@ D. None of the above
 Answer: 56. B
 
 
-57. When a hook plugin overrides the language keys for the locale "en_USthe text presented for the locale comes from:
+57. When a hook plugin overrides the language keys for the locale "en_US" the text presented for the locale comes from:
 A. The core Language.properties
 B. The plugin Language.properties
 C. The plugin Language_en.properties, then the core Language.properties
@@ -487,7 +487,7 @@ D. The plugin Language_en.properties, then the core Language_en.properties
 Answer: 57. D
 
 
-58. The method to retrieve an integer submitted as a form field named "widgetCount"' is:
+58. The method to retrieve an integer submitted as a form field named "widgetCount" is:
 A. GetterUtil.getInteger(actionRequest, "widgetCount")
 B. RequestUtiI.getInteger(actionRequest,"widgetCount )
 C. HTMLUtil.getInteger(actionRequest, "widgetCount")
@@ -526,7 +526,7 @@ Answer: 61. B
 
 
 62. To remove some of the core portlets from the Add Application menu and add them in the Control Panel:
-A. Create a hook plugin that modifies the portal properties default.control.panel.portlets and default.add .application.portlets
+A. Create a hook plugin that modifies the portal properties default.control.panel.portlets and default.add.application.portlets
 B. Create an Ext plugin that modifies liferay-plugin-package.xml and liferay-display.xml
 C. Create an Ext plugin that modifies liferay-portlet-ext.xml and liferay-display.xml
 D. Create an Ext plugin that modifies liferay-look-and-feel.xml
@@ -624,7 +624,7 @@ Answer: 73. C
 A. Add a custom key to the SessionMessages object
 B. Override the language key default-success-message in Language.properties
 C. Provide a <default-message-mapping> entry in liferay-portlet.xml
-D. Pass a parameter called 'success'' in the ActionURL and map it to a custom language key
+D. Pass a parameter called 'success' in the ActionURL and map it to a custom language key
 Answer: 74. A
 
 
@@ -639,7 +639,7 @@ Answer: 75. A,B
 
 76. The recommended way to cleanly redeploy an Ext plugin is to:
 A. Remove the plugin WAR file from the server and redeploy
-B. Set ext.redeploy .enabled to''true''
+B. Set ext.redeploy.enabled to "true"
 C. Remove the ext-plugin-[nameof plugin],xml file in the deployed Liferay application and redeploy
 D. Start from a clean instance of the server and redeploy
 Answer: 76. D
@@ -725,7 +725,7 @@ Answer: 85. C
 
 86. To generate remote services with Service Builder:
 A. Pass the switch "-Dremote-service=true" to the Ant "build-service" target
-B. Set the attribute "remote-service'' to "true" on the "entity" element in service,xml
+B. Set the attribute "remote-service" to "true" on the "entity" element in service,xml
 C. Set the attribute "remote-service" to "true" on the "service-builder" element in service.xml
 D. All of the above
 Answer: 86. B
@@ -901,7 +901,7 @@ Answer: 106. A
 A. </service>
 B. Copy all of the methods from UserLocalServicelmpI to MyUserLocalServicelmpI
 C. Override the authenticateByScreenName() method in MyUserLocalServicelmpI
-D. Add the following to liferay-plugin-package.properties:required -deployment- contexts=UserLocalServ ice
+D. Add the following to liferay-plugin-package.properties:required-deployment-contexts=UserLocalService
 E. Implement custom logic and call super.authenticateByScreenNameQ if applicable
 Answer: 107. A,C,E
 
@@ -940,7 +940,7 @@ D. Classes residing in the hook plugin class loader
 Answer: 111. A,B
 
 
-112. User-specific properties in the Plugins SDK for the user "jsmith'' are configured in:
+112. User-specific properties in the Plugins SDK for the user "jsmith" are configured in:
 A. build.jsmith.properties
 B. pom.xml
 C. pom.jsmith.properties
@@ -992,7 +992,7 @@ Answer: 117. C
 
 118. Portlet events are distributed to portlets on different pages by setting the property:
 A. portlet.event.distribution=all-pages
-B. event.distribution =all-pages
+B. event.distribution=all-pages
 C. portlet.event.distribution=layout-set
 D. No specific property setting is required
 Answer: 118. C
