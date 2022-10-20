@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <spring-boot.version>1.2.1.RELEASE</spring-boot.version>
+        <spring-boot.version>2.5.12</spring-boot.version>
         <bootstrap.version>3.3.2</bootstrap.version>
     </properties>
 
